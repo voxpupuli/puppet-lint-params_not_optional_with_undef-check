@@ -1,4 +1,0 @@
----
-BUNDLE_PATH: ".vendor/"
-BUNDLE_JOBS: "17"
-BUNDLE_WITH: "development:system_tests:test"

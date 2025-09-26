@@ -12,19 +12,18 @@ PuppetLint.new_check(:params_not_optional_with_undef) do
         default_value = extract_default_value_tokens(param)
         type = extract_type_tokens(param)
 
-        if type.size.positive? &&                                  # The parameter has a type
-           type[0].type == :TYPE && type[0].value != 'Optional' && # That type is not Optional
-           default_value.size.positive? &&                         # There is a default set
-           (default_value.map(&:type) & %i[DOT LPAREN]).none? &&   # That default doesn't contain a call to a function
-           default_value[0].type == :UNDEF &&                      # It is undef
+        next unless type.size.positive? && # The parameter has a type
+                    type[0].type == :TYPE && type[0].value != 'Optional' && # That type is not Optional
+                    default_value.size.positive? &&                         # There is a default set
+                    (default_value.map(&:type) & %i[DOT LPAREN]).none? &&   # That default doesn't contain a call to a function
+                    default_value[0].type == :UNDEF &&                      # It is undef
 
-          notify(
-            :warning,
-            message: 'Not optional parameter defaults to undef',
-            line: param.line,
-            column: param.column
-          )
-        end
+                    notify(
+                      :warning,
+                      message: 'Not optional parameter defaults to undef',
+                      line: param.line,
+                      column: param.column,
+                    )
       end
     end
   end

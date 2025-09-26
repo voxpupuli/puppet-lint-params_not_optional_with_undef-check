@@ -11,13 +11,10 @@ Gem::Specification.new do |spec|
     'lib/**/*',
     'spec/**/*',
   ]
-  spec.test_files  = Dir['spec/**/*']
-  spec.summary     = 'A puppet-lint plugin to check for class parameters with undef as value but not Optional type'
+  spec.summary = 'A puppet-lint plugin to check for class parameters with undef as value but not Optional type'
 
-  spec.add_dependency             'puppet-lint', '~> 2.5'
-  spec.add_development_dependency 'rspec', '~> 3.10'
-  spec.add_development_dependency 'rspec-its', '~> 1.3'
-  spec.add_development_dependency 'rspec-collection_matchers', '~> 1.2'
+  spec.required_ruby_version = '>= 3.2'
+
+  spec.add_dependency             'puppet-lint', '~> 5.1'
   spec.add_development_dependency 'rspec-json_expectations', '~> 2.2'
-  spec.add_development_dependency 'rake'
 end

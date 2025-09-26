@@ -2,38 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
-## [1.0.0](https://github.com/voxpupuli/puppet-lint-params_empty_string-check/tree/1.0.0) (2021-11-25)
+## [1.0.0](https://github.com/voxpupuli/puppet-lint-params_not_optional_with_undef-check/tree/1.0.0) (2025-09-26)
 
-[Full Changelog](https://github.com/voxpupuli/puppet-lint-params_empty_string-check/compare/0.1.0...1.0.0)
+[Full Changelog](https://github.com/voxpupuli/puppet-lint-params_not_optional_with_undef-check/compare/375fab05cd3463892b5dc8bd64a85a75adb56e11...1.0.0)
 
-**Implemented enhancements:**
+**Breaking changes:**
 
-- Mark Variant type on empty strings invalid as well [\#8](https://github.com/voxpupuli/puppet-lint-params_empty_string-check/pull/8) ([bastelfreak](https://github.com/bastelfreak))
-- Mark String\[0\] as invalid as well [\#7](https://github.com/voxpupuli/puppet-lint-params_empty_string-check/pull/7) ([bastelfreak](https://github.com/bastelfreak))
-
-**Fixed bugs:**
-
--  Don't fail on values that contain variables [\#10](https://github.com/voxpupuli/puppet-lint-params_empty_string-check/pull/10) ([bastelfreak](https://github.com/bastelfreak))
-- fix typos in unit tests [\#9](https://github.com/voxpupuli/puppet-lint-params_empty_string-check/pull/9) ([bastelfreak](https://github.com/bastelfreak))
+- Require Ruby 3.2+ & puppet-lint 5.1+ [\#3](https://github.com/voxpupuli/puppet-lint-params_not_optional_with_undef-check/pull/3) ([bastelfreak](https://github.com/bastelfreak))
 
 **Merged pull requests:**
 
-- Switch to MIT license [\#11](https://github.com/voxpupuli/puppet-lint-params_empty_string-check/pull/11) ([bastelfreak](https://github.com/bastelfreak))
-- Cleanup wrong transfer notice in README.md [\#6](https://github.com/voxpupuli/puppet-lint-params_empty_string-check/pull/6) ([bastelfreak](https://github.com/bastelfreak))
-
-## [0.1.0](https://github.com/voxpupuli/puppet-lint-params_empty_string-check/tree/0.1.0) (2021-11-01)
-
-[Full Changelog](https://github.com/voxpupuli/puppet-lint-params_empty_string-check/compare/ce94dbc949dde036d1b5274a12d3087f9cfdf519...0.1.0)
-
-**Implemented enhancements:**
-
-- Add actual puppet-lint logic [\#4](https://github.com/voxpupuli/puppet-lint-params_empty_string-check/pull/4) ([bastelfreak](https://github.com/bastelfreak))
-
-**Merged pull requests:**
-
-- Add AGPL-3 license [\#3](https://github.com/voxpupuli/puppet-lint-params_empty_string-check/pull/3) ([bastelfreak](https://github.com/bastelfreak))
-- Add content to README.md [\#2](https://github.com/voxpupuli/puppet-lint-params_empty_string-check/pull/2) ([bastelfreak](https://github.com/bastelfreak))
-- modulesync 2021-10-31 [\#1](https://github.com/voxpupuli/puppet-lint-params_empty_string-check/pull/1) ([bastelfreak](https://github.com/bastelfreak))
+- Update from voxpupuli modulesync\_config [\#2](https://github.com/voxpupuli/puppet-lint-params_not_optional_with_undef-check/pull/2) ([bastelfreak](https://github.com/bastelfreak))
+- Remove bundle config [\#1](https://github.com/voxpupuli/puppet-lint-params_not_optional_with_undef-check/pull/1) ([ekohl](https://github.com/ekohl))
 
 
 

@@ -64,7 +64,7 @@ class foo (
 
 #### Disabling the check
 
-To disable this check, you can add `--no-empty_string_assignment-check` to your puppet-lint command line.
+To disable this check, you can add `--no-params_not_optional_with_undef-check` to your puppet-lint command line.
 
 ```shell
 $ puppet-lint --no-empty_string_assignment-check path/to/file.pp
@@ -73,7 +73,7 @@ $ puppet-lint --no-empty_string_assignment-check path/to/file.pp
 Alternatively, if you’re calling puppet-lint via the Rake task, you should insert the following line to your `Rakefile`.
 
 ```ruby
-PuppetLint.configuration.send('disable_empty_string_assignment')
+PuppetLint.configuration.send('params_not_optional_with_undef')
 ```
 
 You can also disable it inline:

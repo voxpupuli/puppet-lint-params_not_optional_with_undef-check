@@ -26,7 +26,7 @@ gem 'puppet-lint-params_not_optional_with_undef-check', require: false
 
 ## Checks
 
-### Parameter assigned to the empty string
+### Parameter without Optional as type but undef
 
 According the the Vox Pupuli best practices, a class parameter with the string
 datatype should default to `undef` and not `''`, if it's optional. The
@@ -67,7 +67,7 @@ class foo (
 To disable this check, you can add `--no-params_not_optional_with_undef-check` to your puppet-lint command line.
 
 ```shell
-$ puppet-lint --no-empty_string_assignment-check path/to/file.pp
+$ puppet-lint --no-params_not_optional_with_undef-check path/to/file.pp
 ```
 
 Alternatively, if you’re calling puppet-lint via the Rake task, you should insert the following line to your `Rakefile`.
@@ -80,7 +80,7 @@ You can also disable it inline:
 
 ```puppet
 class foo (
-  String $baz = '', # lint:ignore:params_empty_string_assignment
+  String $baz = '', # lint:ignore:params_not_optional_with_undef
 ) {
   # awesome logic here
 }

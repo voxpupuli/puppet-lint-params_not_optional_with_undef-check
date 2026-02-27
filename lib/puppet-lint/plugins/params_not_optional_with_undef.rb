@@ -14,6 +14,7 @@ PuppetLint.new_check(:params_not_optional_with_undef) do
 
         next unless type.size.positive? && # The parameter has a type
                     type[0].type == :TYPE && type[0].value != 'Optional' && # That type is not Optional
+                    !variant_with_undef?(type) && # Not Variant[..., Undef]
                     default_value.size.positive? &&                         # There is a default set
                     (default_value.map(&:type) & %i[DOT LPAREN]).none? &&   # That default doesn't contain a call to a function
                     default_value[0].type == :UNDEF &&                      # It is undef
@@ -29,6 +30,24 @@ PuppetLint.new_check(:params_not_optional_with_undef) do
   end
 
   private
+
+  # Returns true if the type is Variant[..., Undef] (Undef as a direct child)
+  def variant_with_undef?(type_tokens)
+    return false unless type_tokens[0].type == :TYPE && type_tokens[0].value == 'Variant'
+
+    depth = 0
+    type_tokens.each do |token|
+      case token.type
+      when :LBRACK
+        depth += 1
+      when :RBRACK
+        depth -= 1
+      when :TYPE
+        return true if depth == 1 && token.value == 'Undef'
+      end
+    end
+    false
+  end
 
   # Returns an array of parameter tokens
   def extract_params(idx)

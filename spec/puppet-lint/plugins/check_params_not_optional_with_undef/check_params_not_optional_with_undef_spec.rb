@@ -52,6 +52,30 @@ describe 'params_not_optional_with_undef' do
       end
     end
 
+    context 'class definition with Variant containing Undef and undef value' do
+      let(:code) do
+        <<-EOS
+        class foo ( Variant[String, Undef] $bar = undef ) { }
+        EOS
+      end
+
+      it 'does not detect any problems' do
+        expect(problems).to have(0).problems
+      end
+    end
+
+    context 'class definition with Variant containing multiple types and Undef' do
+      let(:code) do
+        <<-EOS
+        class foo ( Variant[String, Integer, Undef] $bar = undef ) { }
+        EOS
+      end
+
+      it 'does not detect any problems' do
+        expect(problems).to have(0).problems
+      end
+    end
+
     context 'class internal variable without empty strings' do
       let(:code) do
         <<-EOS
